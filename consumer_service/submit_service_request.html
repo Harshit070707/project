@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Service Request</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="track_service_request.html">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gas Utility Service</h1>
+    </header>
+    <main>
+        <h2>Submit Service Request</h2>
+        <form id="service-request-form" enctype="multipart/form-data">
+            <label for="type">Service Type:</label>
+            <select name="type" id="type">
+                <option value="Gas Leak">Gas Leak</option>
+                <option value="Meter Reading">Meter Reading</option>
+                <!-- Add more options as needed -->
+            </select>
+            <label for="details">Details:</label>
+            <textarea name="details" id="details" rows="4" cols="50"></textarea>
+            <label for="attachment">Attachment (optional):</label>
+            <input type="file" name="attachment" id="attachment">
+            <button id="submit-button" type="button">Submit Request</button>
+        </form>
+    </main>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

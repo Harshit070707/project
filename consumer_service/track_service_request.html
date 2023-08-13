@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Service Request</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="submit_service_request.html">
+    <link rel="stylesheet" href="track_service_request.html">
+</head>
+<body>
+    <header>
+        <h1>Gas Utility Service</h1>
+    </header>
+    <main>
+        <h2>Service Request Details</h2>
+        <p>Request ID: {{ service_request.id }}</p>
+        <p>Type: {{ service_request.type }}</p>
+        <p>Details: {{ service_request.details }}</p>
+        {% if service_request.attachment %}
+            <p>Attachment: <a href="{{ service_request.attachment.url }}" target="_blank">{{ service_request.attachment }}</a></p>
+        {% endif %}
+        <p>Status: {{ service_request.status }}</p>
+        <p>Submitted Date: {{ service_request.submitted_date }}</p>
+        {% if service_request.resolved_date %}
+            <p>Resolved Date: {{ service_request.resolved_date }}</p>
+        {% endif %}
+    </main>
+</body>
+</html>
